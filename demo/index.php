@@ -5,21 +5,30 @@
   <title>Demo</title>
 </head>
 <body>
-  <h1>Recommended Books</h1>
-
   <?php
     $books = [
-      "Do Androids Dream of Electric Sheep",
-      "The Langoliers",
-      "Hail Mary"
+      [
+        'name' => 'Do Androids Dream of Electric Sheep',
+        'author' => 'The Langoliers',
+        'purchaseUrl' => 'http://example.com'
+      ],
+      [
+        'name' => 'Project Hail Mary',
+        'author' => 'Andy Weir',
+        'purchaseUrl' => 'http://example.com'
+      ]
     ];
   ?>
 
   <ul>
     <?php foreach ($books as $book) : ?>
-      <li><?= $book ?></li>
+      <li>
+        <a href="<?= $book['purchaseUrl'] ?>">
+          <?= $book['name']; ?>
+        </a>
+      </li>
     <?php endforeach ?>
   </ul>
-  
+
 </body>
 </html>
