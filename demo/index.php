@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Demo</title>
 </head>
+
 <body>
   <?php
     $books = [
@@ -26,15 +27,13 @@
         'purchaseUrl' => 'http://example.com'
       ]
     ];
-  ?>
 
-  <?php 
     function filterByAuthor($books, $author) {
       $filterBooks = [];
 
       foreach ($books as $book) {
         if ($book['author'] === $author) {
-          $filterBooks = $book;
+          $filterBooks[] = $book;
         }
       }
 
